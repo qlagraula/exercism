@@ -1,0 +1,43 @@
+package airportrobot
+
+// Write your code here.
+// This exercise does not have tests for each individual task.
+// Try to solve all the tasks first before running the tests.
+type Greeter interface {
+	LanguageName() string
+	Greet(visitor string) string
+}
+
+func SayHello(name string, greeter Greeter) string {
+	return "I can speak " + greeter.LanguageName() + ": " + greeter.Greet(name)
+}
+
+type German struct{}
+
+func (g German) LanguageName() string {
+	return "German"
+}
+
+func (g German) Greet(visitor string) string {
+	return "Hallo " + visitor + "!"
+}
+
+type Italian struct{}
+
+func (i Italian) LanguageName() string {
+	return "Italian"
+}
+
+func (i Italian) Greet(visitor string) string {
+	return "Ciao " + visitor + "!"
+}
+
+type Portuguese struct{}
+
+func (p Portuguese) LanguageName() string {
+	return "Portuguese"
+}
+
+func (p Portuguese) Greet(visitor string) string {
+	return "Olá " + visitor + "!"
+}
